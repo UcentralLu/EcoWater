@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ajustes - EcoWater</title>
+    <meta name="description" content="Explora nuestras diferentes categorías de productos para el hogar y el jardín.">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&family=Merriweather:ital,wght@0,300;0,700;1,300&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <link rel="stylesheet" href="../css/ajustes.css"> </head>
+<body>
+    <header>
+        <div class="logo">
+            <i class="fas fa-tint water-drop"></i> EcoWater
+        </div>
+        <nav class="nav-menu">
+            <a href="productos.html">Productos</a>                        
+            <a href="monitoreo.html">Monitoreo</a>                           
+            <ul> <li class="user-account"> <a href="#"><i class="fas fa-user"></i> Mi Cuenta</a>
+                <ul class="account-dropdown">
+                    <li><a href="perfil.html">Perfil</a></li>
+                    <li><a href="ajustes.html">Ajustes</a></li>                    
+                    <li><a href="prueba2.html">Cerrar Sesión</a></li>
+                </ul>
+            </li>
+            </ul>
+            <a href="carrito.html">
+                <i class="fas fa-shopping-cart"></i>
+                <span class="carrito-contador">0</span>
+            </a> 
+        </nav>
+    </header>
+
+    <div class="container ajustes-page">
+        <h1>Ajustes</h1>
+
+        <section class="ajustes-seccion">
+            <h2>Preferencias de Cuenta</h2>
+            <div class="ajuste-item">
+                <label for="nombre-usuario">Nombre de Usuario:</label>
+                <input type="text" id="nombre-usuario" value="UsuarioEjemplo">
+            </div>
+            <div class="ajuste-item">
+                <label for="email">Correo Electrónico:</label>
+                <input type="email" id="email" value="usuario@ejemplo.com">
+            </div>
+            <div class="ajuste-item">
+                <label for="contrasena">Cambiar Contraseña:</label>
+                <button class="btn-cambiar-contrasena">Cambiar</button>
+                <div id="cambiar-contrasena-form" class="form-oculto">
+                    <label for="nueva-contrasena">Nueva Contraseña:</label>
+                    <input type="password" id="nueva-contrasena">
+                    <label for="confirmar-contrasena">Confirmar Contraseña:</label>
+                    <input type="password" id="confirmar-contrasena">
+                    <button class="btn-guardar-contrasena">Guardar Contraseña</button>
+                    <button class="btn-cancelar-contrasena">Cancelar</button>
+                </div>
+            </div>
+        </section>
+
+        <section class="ajustes-seccion">
+            <h2>Preferencias de Monitoreo</h2>
+            <div class="ajuste-item">
+                <label for="unidad-consumo">Unidad de Consumo:</label>
+                <select id="unidad-consumo">
+                    <option value="litros" selected>Litros (L)</option>
+                    <option value="galones">Galones (gal)</option>
+                </select>
+            </div>
+            <div class="ajuste-item">
+                <label for="frecuencia-reportes">Frecuencia de Reportes:</label>
+                <select id="frecuencia-reportes">
+                    <option value="diario">Diario</option>
+                    <option value="semanal" selected>Semanal</option>
+                    <option value="mensual">Mensual</option>
+                </select>
+            </div>
+            <div class="ajuste-item">
+                <label>Notificaciones de Alertas:</label>
+                <label class="switch">
+                    <input type="checkbox" id="notificaciones-alertas" checked>
+                    <span class="slider round"></span>
+                </label>
+            </div>
+        </section>
+
+        <section class="ajustes-seccion">
+            <h2>Preferencias de la Aplicación</h2>
+            <div class="ajuste-item">
+                <label for="tema-app">Tema de la Aplicación:</label>
+                <select id="tema-app">
+                    <option value="claro" selected>Claro</option>
+                    <option value="oscuro">Oscuro</option>
+                </select>
+            </div>
+        </section>
+
+        <button class="btn-guardar-ajustes">Guardar Ajustes</button>
+    </div>    
+    <script src="../js/ajustes.js"></script>
+</body>
+</html>

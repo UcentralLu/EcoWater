@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Productos - EcoWater</title>
+    <meta name="description" content="Explora nuestra amplia gama de productos para el hogar y el jardín.">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&family=Merriweather:ital,wght@0,300;0,700;1,300&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">    
+    <link rel="stylesheet" href="../css/style2.css">
+        
+</head>
+<body>
+    <header>
+        <div class="logo">
+            <i class="fas fa-tint water-drop"></i> EcoWater
+        </div>
+        <nav class="nav-menu">
+            <a href="productos.html">Productos</a>                        
+            <a href="monitoreo.html">Monitoreo</a>                           
+            <ul> <li class="user-account"> <a href="#"><i class="fas fa-user"></i> Mi Cuenta</a>
+                <ul class="account-dropdown">
+                    <li><a href="perfil.html">Perfil</a></li>
+                    <li><a href="ajustes.html">Ajustes</a></li>                    
+                    <li><a href="prueba2.html">Cerrar Sesión</a></li>
+                </ul>
+            </li>
+            </ul>
+            <a href="carrito.html">
+                <i class="fas fa-shopping-cart"></i>
+                <span class="carrito-contador">0</span>
+            </a> 
+        </nav>
+    </header>
+
+
+    <main class="productos-page">
+        <aside class="filter-sidebar">
+            <h2>Filtrar por:</h2>
+            <div class="filter-group">
+                <h3>Tipo de Dispositivo</h3>
+                <ul>
+                    <li><label><input type="checkbox" name="tipo" value="griferia"> Grifería</label></li>                    
+                    <li><label><input type="checkbox" name="tipo" value="ducha"> Ducha</label></li>
+                    <li><label><input type="checkbox" name="tipo" value="bano"> Baño</label></li>
+                    <li><label><input type="checkbox" name="tipo" value="cocina"> Cocina</label></li>
+                    </ul>
+            </div>
+            <div class="filter-group">
+                <h3>Marca</h3>
+                <ul>
+                    <li><label><input type="checkbox" name="marca" value="eco"> EcoBrand</label></li>
+                    <li><label><input type="checkbox" name="marca" value="waterplus"> WaterPlus</label></li>
+                    <li><label><input type="checkbox" name="marca" value="flowtech"> FlowTech</label></li>
+                    <li><label><input type="checkbox" name="marca" value="aqualux"> aqualux</label></li>
+                </ul>
+            </div>
+            <div class="filter-group">
+                <h3>Capacidad</h3>
+                <ul>
+                    <li><label><input type="checkbox" name="capacidad" value="bajo"> Bajo Flujo</label></li>
+                    <li><label><input type="checkbox" name="capacidad" value="automatico"> Automático</label></li>
+                </ul>
+            </div>            
+        </aside>
+
+        <div class="productos-list-container">
+            <div class="search-bar">
+                <input type="text" placeholder="Buscar productos...">
+                <button><i class="fas fa-search"></i></button>
+            </div>
+            <div class="productos-grid">                
+                <div class="producto-card">
+                    <img src="https://via.placeholder.com/200" alt="Aireador EcoFlow">
+                    <h3>Aireador EcoFlow Smart</h3>
+                    <p class="precio">$160.000</p>
+                    <p class="descripcion-breve">Reduce el caudal sin perder presión. Fácil de instalar en grifos comunes.</p>
+                    <button class="add-to-cart-btn">Agregar al carrito</button>
+                    <span class="etiqueta oferta">En oferta</span>
+                </div>
+                                      
+            </div>
+        </div>
+    </main>
+
+    <footer>
+        <div class="footer-grid">
+            <div class="footer-col">
+                <h4>Contacto</h4>
+                <p><strong>Email:</strong> info@ecowater.es</p>
+                <p><strong>Teléfono:</strong> +34 987 654 321</p>
+                <p><strong>Dirección:</strong> Calle Falsa 123, Ciudad Ejemplo</p>
+            </div>
+            <div class="footer-col">
+                <h4>Legal</h4>
+                <a href="politicas.html">Política de Privacidad</a>
+                <a href="terminos.html">Términos y Condiciones</a>
+                <a href="aviso.html">Aviso Legal</a>
+            </div>
+            <div class="footer-col">
+                <h4>Síguenos</h4>
+                <div class="social-icons">
+                    <a href="#" aria-label="Facebook"><i class="fab fa-facebook"></i></a>
+                    <a href="#" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
+                    <a href="#" aria-label="Twitter"><i class="fab fa-twitter"></i></a>
+                    <a href="#" aria-label="LinkedIn"><i class="fab fa-linkedin"></i></a>
+                </div>
+            </div>
+            <div class="footer-grid">
+                <img src="/logo.png" style="max-width: 230px; height: auto;">
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>&copy; 2023 EcoWater. Todos los derechos reservados.</p>
+            <p>Diseñado con <i class="fas fa-heart" style="color: var(--color-acento);"></i> por Grupo 3</p>
+        </div>
+    </footer>
+
+    <script src="../js/scripts2.js"></script>
+</body>
+</html>

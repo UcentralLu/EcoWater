@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pago - EcoWater</title>
+    <meta name="description" content="Proceso de pago de tu compra en EcoWater.">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&family=Merriweather:ital,wght@0,300;0,700;1,300&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <link rel="stylesheet" href="/css/monitoreo.css">
+    <script src="/js/pagos.js"></script>
+</head>
+<body>
+    <header>
+        <div class="logo">
+            <i class="fas fa-tint water-drop"></i> EcoWater
+        </div>
+        <nav class="nav-menu">
+            <a href="productos.html">Productos</a>
+            <a href="monitoreo.html">Monitoreo</a>
+            <ul>
+                <li class="user-account">
+                    <a href="#"><i class="fas fa-user"></i> Mi Cuenta</a>
+                    <ul class="account-dropdown">
+                        <li><a href="perfil.html">Perfil</a></li>
+                        <li><a href="ajustes.html">Ajustes</a></li>
+                        <li><a href="prueba2.html">Cerrar Sesión</a></li>
+                    </ul>
+                </li>
+            </ul>
+            <a href="carrito.html" class="carrito-container">
+                <i class="fas fa-shopping-cart"></i>
+                <span class="carrito-contador">0</span>
+            </a>
+        </nav>
+    </header>
+
+    <div class="container pago-page">
+        <h1>Proceso de Pago</h1>
+
+        <section class="metodos-pago">
+            <h2>Selecciona tu Método de Pago</h2>
+
+            <div class="opciones-pago">
+                <button class="btn-opcion-pago" data-metodo="tarjeta">
+                    <i class="far fa-credit-card"></i> Tarjeta de Crédito/Débito
+                </button>
+                <button class="btn-opcion-pago" data-metodo="nequi">
+                    <img src="https://www.electromanferonline.com/img/cms/Nequi.png" alt="Nequi" class="logo-nequi"> Nequi
+                </button>
+            </div>
+
+            <div id="formulario-tarjeta" class="formulario-pago" style="display: none;">
+                <h3>Pago con Tarjeta de Crédito/Débito</h3>
+                <form id="form-tarjeta">
+                    <div class="form-group">
+                        <label for="numero-tarjeta">Número de Tarjeta</label>
+                        <input type="text" id="numero-tarjeta" name="numero-tarjeta" placeholder="XXXX-XXXX-XXXX-XXXX" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="fecha-expiracion">Fecha de Expiración</label>
+                        <input type="text" id="fecha-expiracion" name="fecha-expiracion" placeholder="MM/AA" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="cvv">CVV</label>
+                        <input type="text" id="cvv" name="cvv" placeholder="XXX" required>
+                    </div>
+                    <button type="submit" class="btn-pagar">Pagar con Tarjeta</button>
+                    <p class="nota-seguridad">Tu información de pago está segura.</p>
+                </form>
+            </div>
+
+            <div id="formulario-nequi" class="formulario-pago" style="display: none;">
+                <h3>Pago con Nequi</h3>
+                <form id="form-nequi">
+                    <div class="form-group">
+                        <p>Serás redirigido a la página de Nequi para completar tu pago.</p>
+                    </div>    
+                    <div class="form-group">                        
+                        <button type="button" class="btn-pagar">Pagar con Nequi</button>                
+                    </div>    
+                </form>
+            </div>
+
+            <div id="mensaje-error" class="mensaje mensaje-error" style="display: none;"></div>
+            <div id="mensaje-exito" class="mensaje mensaje-exito" style="display: none;"></div>
+        </section>
+
+        <section class="resumen-compra">
+            <h2>Resumen de tu Compra</h2>
+            <div class="resumen-item">
+                <span>Subtotal:</span>
+                <span class="subtotal">$XX.XX</span>
+            </div>
+            <div class="resumen-item">
+                <span>Envío:</span>
+                <span class="envio">$YY.YY</span>
+            </div>
+            <div class="resumen-total">
+                <span>Total a Pagar:</span>
+                <span class="total">$ZZ.ZZ</span>
+            </div>
+        </section>
+    </div>
+
+    <footer>
+        <div class="footer-grid">
+            <div class="footer-col">
+                <h4>Contacto</h4>
+                <p><strong>Email:</strong> info@ecowater.es</p>
+                <p><strong>Teléfono:</strong> +34 987 654 321</p>
+                <p><strong>Dirección:</strong> Calle Falsa 123, Ciudad Ejemplo</p>
+            </div>
+            <div class="footer-col">
+                <h4>Legal</h4>
+                <a href="politicas.html">Política de Privacidad</a>
+                <a href="terminos.html">Términos y Condiciones</a>
+                <a href="aviso.html">Aviso Legal</a>
+            </div>
+            <div class="footer-col">
+                <h4>Síguenos</h4>
+                <div class="social-icons">
+                    <a href="#" aria-label="Facebook"><i class="fab fa-facebook"></i></a>
+                    <a href="#" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
+                    <a href="#" aria-label="Twitter"><i class="fab fa-twitter"></i></a>
+                    <a href="#" aria-label="LinkedIn"><i class="fab fa-linkedin"></i></a>
+                </div>
+            </div>
+            <div class="footer-col">
+                <div class="footer-grid">
+                    <img src="/logo.png" style="max-width: 230px; height: auto;">
+                </div>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>&copy; 2023 EcoWater. Todos los derechos reservados.</p>
+            <p>Diseñado con <i class="fas fa-heart" style="color: var(--color-acento);"></i> por Grupo 3</p>
+        </div>
+    </footer>
+
+</body>
+</html>

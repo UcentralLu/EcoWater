@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Carrito de Compras - EcoWater</title>
+    <meta name="description" content="Explora nuestras diferentes categorías de productos para el hogar y el jardín.">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&family=Merriweather:ital,wght@0,300;0,700;1,300&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <link rel="stylesheet" href="/css/ajustes.css"> <script src="/js/carrito.js"></script> </head>
+<body>
+    <header>
+        <div class="logo">
+            <i class="fas fa-tint water-drop"></i> EcoWater
+        </div>
+        <nav class="nav-menu">
+            <a href="productos.html">Productos</a>                        
+            <a href="monitoreo.html">Monitoreo</a>                           
+            <ul> <li class="user-account"> <a href="#"><i class="fas fa-user"></i> Mi Cuenta</a>
+                <ul class="account-dropdown">
+                    <li><a href="perfil.html">Perfil</a></li>
+                    <li><a href="ajustes.html">Ajustes</a></li>                    
+                    <li><a href="prueba2.html">Cerrar Sesión</a></li>
+                </ul>
+            </li>
+            </ul>
+            <a href="carrito.html">
+                <i class="fas fa-shopping-cart"></i>
+                <span class="carrito-contador">0</span>
+            </a> 
+        </nav>
+    </header>
+
+    <div class="container carrito-page">
+        <h1>Carrito de Compras</h1>
+
+        <section class="carrito-items">
+            <p class="carrito-vacio" style="display:none;">El carrito está vacío.</p>
+        </section>
+
+        <section class="carrito-resumen">
+            <h2>Resumen del Pedido</h2>
+            <div class="resumen-item">
+                <span>Subtotal:</span>
+                <span class="subtotal">$0.00</span>
+            </div>
+            <div class="resumen-item">
+                <span>Envío:</span>
+                <span class="envio">$0.00</span>
+            </div>
+            <div class="resumen-total">
+                <span>Total:</span>
+                <span class="total">$0.00</span>
+            </div>
+            <a href="pago.html">
+                <button class="btn-comprar">Finalizar Compra</button>
+            </a>
+        </section>
+    </div>
+
+    <footer>
+        <div class="footer-grid">
+            <div class="footer-col">
+                <h4>Contacto</h4>
+                <p><strong>Email:</strong> info@ecowater.es</p>
+                <p><strong>Teléfono:</strong> +34 987 654 321</p>
+                <p><strong>Dirección:</strong> Calle Falsa 123, Ciudad Ejemplo</p>
+            </div>
+            <div class="footer-col">
+                <h4>Legal</h4>
+                <a href="politicas.html">Política de Privacidad</a>
+                <a href="terminos.html">Términos y Condiciones</a>
+                <a href="aviso.html">Aviso Legal</a>
+            </div>
+            <div class="footer-col">
+                <h4>Síguenos</h4>
+                <div class="social-icons">
+                    <a href="#" aria-label="Facebook"><i class="fab fa-facebook"></i></a>
+                    <a href="#" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
+                    <a href="#" aria-label="Twitter"><i class="fab fa-twitter"></i></a>
+                    <a href="#" aria-label="LinkedIn"><i class="fab fa-linkedin"></i></a>
+                </div>
+            </div>
+            <div class="footer-col">
+                <div class="footer-grid">
+                    <img src="/logo.png" style="max-width: 230px; height: auto;">
+                </div>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>&copy; 2023 EcoWater. Todos los derechos reservados.</p>
+            <p>Diseñado con <i class="fas fa-heart" style="color: var(--color-acento);"></i> por Grupo 3</p>
+        </div>
+    </footer>
+</body>
+</html>

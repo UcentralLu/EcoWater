@@ -1,0 +1,220 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Panel de Monitoreo</title>    
+    <meta name="description" content="Explora nuestras diferentes categorías de productos para el hogar y el jardín.">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&family=Merriweather:ital,wght@0,300;0,700;1,300&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <link rel="stylesheet" href="../css/monitoreo.css">
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+</head>
+
+<body>
+
+    <header>
+        <div class="logo">
+            <i class="fas fa-tint water-drop"></i> EcoWater
+        </div>
+        <nav class="nav-menu">
+            <a href="productos.html">Productos</a>                        
+            <a href="monitoreo.html">Monitoreo</a>                           
+            <ul> <li class="user-account"> <a href="#"><i class="fas fa-user"></i> Mi Cuenta</a>
+                <ul class="account-dropdown">
+                    <li><a href="perfil.html">Perfil</a></li>
+                    <li><a href="ajustes.html">Ajustes</a></li>                    
+                    <li><a href="prueba2.html">Cerrar Sesión</a></li>
+                </ul>
+            </li>
+            </ul>
+            <a href="#">
+                <i class="fas fa-shopping-cart"></i>
+                <span class="carrito-contador">0</span>
+            </a> 
+        </nav>
+    </header>
+
+    <div class="dashboard-container">
+        
+            <h1>Panel de Monitoreo</h1>
+            <div class="configuracion dropdown">
+                <button class="configuracion-btn">⚙️ Configuración</button>
+                <div id="configuracion-menu" class="dropdown-menu">
+                    <a href="#" class="dropdown-item">Preferencias de Visualización</a>
+                    <a href="#" class="dropdown-item">Alertas y Notificaciones</a>
+                    <div class="dropdown-divider"></div>
+                    <a href="#" class="dropdown-item">Opciones Avanzadas</a>
+                </div>
+            </div>
+        
+
+        <div class="dashboard-widgets">
+            <div class="widget consumo-actual">
+                <div class="widget-icon">💧</div>
+                <div class="widget-info">
+                    <h3>Consumo Actual</h3>
+                    <p><span id="consumo-actual-valor">45</span> L/min</p>
+                </div>
+            </div>
+
+            <div class="widget ahorro-diario">
+                <div class="widget-icon">🌿</div>
+                <div class="widget-info">
+                    <h3>Ahorro Diario</h3>
+                    <p><span id="ahorro-diario-valor">1,200</span> L</p>
+                </div>
+            </div>
+
+            <div class="widget meta-mensual">
+                <div class="widget-icon">🎯</div>
+                <div class="widget-info">
+                    <h3>Meta Mensual</h3>
+                    <p><span id="meta-mensual-valor">65</span>%</p>
+                </div>
+            </div>
+
+            <div class="widget alertas-activas">
+                <div class="widget-icon">⚠️</div>
+                <div class="widget-info">
+                    <h3>Alertas Activas</h3>
+                    <p><span id="alertas-activas-valor">2</span></p>
+                </div>
+            </div>
+        </div>
+
+        <div class="dashboard-main">
+            <section class="consumo-tiempo-real-section">
+                <div class="section-header">
+                    <h2>Consumo en Tiempo Real</h2>
+                    <div class="simulacion-selector">
+                        <button class="simulacion-btn">
+                            Simulación
+                            <svg viewBox="0 0 16 16" fill="currentColor"
+                                style="margin-left: 5px; vertical-align: middle; width: 1em; height: 1em;">
+                                <path fill-rule="evenodd"
+                                    d="M1.646 4.646a.5.5 0 0 1 .708 0L8 10.293l5.646-5.647a.5.5 0 0 1 .708.708l-6 6a.5.5 0 0 1-.708 0l-6-6a.5.5 0 0 1 0-.708z" />
+                            </svg>
+                        </button>
+                        <ul class="simulacion-options">
+                            <li data-type="normal">Normal</li>
+                            <li data-type="consumo-alto">Consumo Alto</li>
+                            <li data-type="fuga">Fuga Detectada</li>
+                        </ul>
+                    </div>
+                </div>
+                <canvas id="consumoChart"></canvas>
+            </section>
+
+            <section class="alertas-recientes-section">
+                <div class="section-header">
+                    <h2>Alertas Recientes</h2>
+                </div>
+                <div id="alertas-container">
+                    <div class="alerta fuga">
+                        <div class="alerta-icon">❗</div>
+                        <div class="alerta-info">
+                            <h3>Fuga detectada</h3>
+                            <p>Sector: Cocina Principal</p>
+                        </div>
+                    </div>
+                    <div class="alerta consumo-elevado">
+                        <div class="alerta-icon">💧</div>
+                        <div class="alerta-info">
+                            <h3>Consumo elevado</h3>
+                            <p>Ducha Principal - 45 L/min</p>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <section class="configuracion-metas">
+                <div id="modal-metas" class="modal">
+                    <div class="modal-content">
+                        <span class="close-button">&times;</span>
+                        <h2>⚙️ Personalizar Metas</h2>
+                        <form id="form-metas">
+                            <div class="form-group">
+                                <label for="limite-mensual">Nuevo Límite Mensual (L):</label>
+                                <input type="number" id="limite-mensual" name="limite-mensual" value="20000">
+                            </div>
+                            <div class="form-group">
+                                <label for="notificaciones">Recibir Notificaciones:</label>
+                                <input type="checkbox" id="notificaciones" name="notificaciones" checked>
+                            </div>
+                            <button type="submit" class="guardar-metas">Guardar Metas</button>
+                        </form>
+                    </div>
+                </div>
+                <div class="section-header">
+                    <h2>⚙️ Configuración de Metas</h2>
+                </div>
+                <p>Límite mensual: <span>20,000 L</span></p>
+                <div class="barra-progreso">
+                    <div class="progreso" style="width: 65%;"><span>65%</span></div>
+                </div>
+                <button class="personalizar-metas">✏️ Personalizar Metas</button>
+            </section>
+        </div>
+
+        <section class="generar-reportes">
+            <h2>Generar Reportes</h2>
+            <div class="reportes-grid">
+                <div class="reporte-item">
+                    <div class="reporte-icon">📄</div>
+                    <h3>Reporte Diario</h3>
+                    <a href="#" class="descargar-btn">⬇️ Descargar PDF</a>
+                </div>
+                <div class="reporte-item">
+                    <div class="reporte-icon">📊</div>
+                    <h3>Datos Históricos</h3>
+                    <a href="#" class="descargar-btn">⬇️ Descargar CSV</a>
+                </div>
+                <div class="reporte-item">
+                    <div class="reporte-icon">📈</div>
+                    <h3>Análisis Comparativo</h3>
+                    <button class="generar-grafico-btn">📊 Generar Gráfico</button>
+                </div>
+            </div>
+        </section>
+    </div>
+    <footer>
+        <div class="footer-grid">
+            <div class="footer-col">
+                <h4>Contacto</h4>
+                <p><strong>Email:</strong> info@ecowater.es</p>
+                <p><strong>Teléfono:</strong> +34 987 654 321</p>
+                <p><strong>Dirección:</strong> Calle Falsa 123, Ciudad Ejemplo</p>
+            </div>
+            <div class="footer-col">
+                <h4>Legal</h4>
+                <a href="politicas.html">Política de Privacidad</a>
+                <a href="terminos.html">Términos y Condiciones</a>
+                <a href="aviso.html">Aviso Legal</a>
+            </div>
+            <div class="footer-col">
+                <h4>Síguenos</h4>
+                <div class="social-icons">
+                    <a href="#" aria-label="Facebook"><i class="fab fa-facebook"></i></a>
+                    <a href="#" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
+                    <a href="#" aria-label="Twitter"><i class="fab fa-twitter"></i></a>
+                    <a href="#" aria-label="LinkedIn"><i class="fab fa-linkedin"></i></a>
+                </div>
+            </div>
+            <div class="footer-col">
+                <div class="footer-grid">
+                    <img src="/logo.png" style="max-width: 230px; height: auto;">
+                </div>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>&copy; 2023 EcoWater. Todos los derechos reservados.</p>
+            <p>Diseñado con <i class="fas fa-heart" style="color: var(--color-acento);"></i> por Grupo 3</p>
+        </div>
+    </footer>
+
+    <script src="../js/monitoreo.js"></script>
+</body>
+
+</html>

@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Perfil - EcoWater</title>
+    <meta name="description" content="Explora nuestras diferentes categorías de productos para el hogar y el jardín.">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&family=Merriweather:ital,wght@0,300;0,700;1,300&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <link rel="stylesheet" href="/css/ajustes.css"> <script src="/js/ajustes.js"></script> </head>
+<body>
+    <header>
+        <div class="logo">
+            <i class="fas fa-tint water-drop"></i> EcoWater
+        </div>
+        <nav class="nav-menu">
+            <a href="productos.html">Productos</a>                        
+            <a href="monitoreo.html">Monitoreo</a>                           
+            <ul> <li class="user-account"> <a href="#"><i class="fas fa-user"></i> Mi Cuenta</a>
+                <ul class="account-dropdown">
+                    <li><a href="perfil.html">Perfil</a></li>
+                    <li><a href="ajustes.html">Ajustes</a></li>                    
+                    <li><a href="prueba2.html">Cerrar Sesión</a></li>
+                </ul>
+            </li>
+            </ul>
+            <a href="carrito.html">
+                <i class="fas fa-shopping-cart"></i>
+                <span class="carrito-contador">0</span>
+            </a> 
+        </nav>
+    </header>
+
+    <div class="container perfil-page">
+        <h1>Perfil de Usuario</h1>
+
+        <section class="perfil-info">
+            <div class="avatar">
+                <img src="https://static.vecteezy.com/system/resources/thumbnails/048/926/084/small_2x/silver-membership-icon-default-avatar-profile-icon-membership-icon-social-media-user-image-illustration-vector.jpg" alt="Avatar de Usuario">
+                <button class="btn-cambiar-avatar">Cambiar Avatar</button>
+                <input type="file" id="upload-avatar" accept="image/*" style="display: none;">
+            </div>
+            <div class="detalles-usuario">
+                <div class="campo-perfil">
+                    <label>Nombre:</label>
+                    <span id="nombre-perfil">Usuario Ejemplo</span>
+                    <button class="btn-editar" data-campo="nombre">Editar</button>
+                    <input type="text" id="editar-nombre" class="input-editar" style="display: none;">
+                    <button class="btn-guardar input-editar" data-campo="nombre" style="display: none;">Guardar</button>
+                    <button class="btn-cancelar input-editar" data-campo="nombre" style="display: none;">Cancelar</button>
+                </div>
+                <div class="campo-perfil">
+                    <label>Correo Electrónico:</label>
+                    <span id="email-perfil">usuario@ejemplo.com</span>
+                    <span class="no-editar">(No se puede editar)</span>
+                </div>
+                <div class="campo-perfil">
+                    <label>Fecha de Registro:</label>
+                    <span id="fecha-registro">15 de Marzo de 2025</span>
+                </div>
+                <div class="campo-perfil">
+                    <label>Último Inicio de Sesión:</label>
+                    <span id="ultimo-login">Hoy a las 17:00</span>
+                </div>
+            </div>
+        </section>
+
+        <section class="perfil-preferencias">
+            <h2>Preferencias</h2>
+            <div class="campo-perfil">
+                <label>Unidad de Consumo:</label>
+                <span id="unidad-consumo-perfil">Litros (L)</span>
+                <button class="btn-editar" data-campo="unidad-consumo">Editar</button>
+                <select id="editar-unidad-consumo" class="input-editar" style="display: none;">
+                    <option value="litros">Litros (L)</option>
+                    <option value="galones">Galones (gal)</option>
+                </select>
+                <button class="btn-guardar input-editar" data-campo="unidad-consumo" style="display: none;">Guardar</button>
+                <button class="btn-cancelar input-editar" data-campo="unidad-consumo" style="display: none;">Cancelar</button>
+            </div>
+            <div class="campo-perfil">
+                <label>Tema de la Aplicación:</label>
+                <span id="tema-app-perfil">Claro</span>
+                <button class="btn-editar" data-campo="tema-app">Editar</button>
+                <select id="editar-tema-app" class="input-editar" style="display: none;">
+                    <option value="claro">Claro</option>
+                    <option value="oscuro">Oscuro</option>
+                </select>
+                <button class="btn-guardar input-editar" data-campo="tema-app" style="display: none;">Guardar</button>
+                <button class="btn-cancelar input-editar" data-campo="tema-app" style="display: none;">Cancelar</button>
+            </div>
+        </section>
+    </div>
+
+    <footer>
+        <div class="footer-grid">
+            <div class="footer-col">
+                <h4>Contacto</h4>
+                <p><strong>Email:</strong> info@ecowater.es</p>
+                <p><strong>Teléfono:</strong> +34 987 654 321</p>
+                <p><strong>Dirección:</strong> Calle Falsa 123, Ciudad Ejemplo</p>
+            </div>
+            <div class="footer-col">
+                <h4>Legal</h4>
+                <a href="politicas.html">Política de Privacidad</a>
+                <a href="terminos.html">Términos y Condiciones</a>
+                <a href="aviso.html">Aviso Legal</a>
+            </div>
+            <div class="footer-col">
+                <h4>Síguenos</h4>
+                <div class="social-icons">
+                    <a href="#" aria-label="Facebook"><i class="fab fa-facebook"></i></a>
+                    <a href="#" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
+                    <a href="#" aria-label="Twitter"><i class="fab fa-twitter"></i></a>
+                    <a href="#" aria-label="LinkedIn"><i class="fab fa-linkedin"></i></a>
+                </div>
+            </div>
+            <div class="footer-col">
+                <div class="footer-grid">
+                    <img src="/logo.png" style="max-width: 230px; height: auto;">
+                </div>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>&copy; 2023 EcoWater. Todos los derechos reservados.</p>
+            <p>Diseñado con <i class="fas fa-heart" style="color: var(--color-acento);"></i> por Grupo 3</p>
+        </div>
+    </footer>
+</body>
+</html>

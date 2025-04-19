@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Registrarse - EcoWater</title>
+    <meta name="description" content="Crea una nueva cuenta en EcoWater para disfrutar de nuestros productos y gestionar tus pedidos.">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&family=Merriweather:ital,wght@0,300;0,700;1,300&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">    
+    <link rel="stylesheet" href="../css/style.css">
+</head>
+<body>
+    <div class="register-container">
+        <div class="register-header">
+            <div class="logo">
+                <i class="fas fa-tint water-drop"></i> EcoWater
+            </div>
+            <h2>Crear Cuenta</h2>
+        </div>
+        <form class="register-form">
+            <div class="form-group">
+                <label for="nombre"><i class="fas fa-user"></i> Nombre</label>
+                <input type="text" id="nombre" name="nombre" placeholder="Tu nombre" required>
+            </div>
+            <div class="form-group">
+                <label for="email"><i class="fas fa-envelope"></i> Correo Electrónico</label>
+                <input type="email" id="email" name="email" placeholder="Tu correo electrónico" required>
+            </div>
+            <div class="form-group">
+                <label for="password"><i class="fas fa-lock"></i> Contraseña</label>
+                <input type="password" id="password" name="password" placeholder="Tu contraseña" required>
+                <span class="password-toggle">                    
+                </span>
+            </div>
+            <div class="form-group">
+                <label for="confirm_password"><i class="fas fa-lock"></i> Confirmar Contraseña</label>
+                <input type="password" id="confirm_password" name="confirm_password" placeholder="Confirma tu contraseña" required>
+                <span class="password-toggle confirm-toggle">                    
+                </span>
+            </div>
+            <div class="form-options">
+                <label>
+                    <input type="checkbox" name="terms" required> Acepto los <a href="terminos.html">Términos y Condiciones</a>
+                </label>
+            </div>
+            <button type="submit" class="cta-button register-button">Registrarse</button>
+        </form>
+        <div class="register-footer">
+            ¿Ya tienes una cuenta? <a href="login.html">Iniciar Sesión</a>
+        </div>
+    </div>
+
+    <script src="../js/scripts.js"></script>
+</body>
+</html>

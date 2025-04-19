@@ -1,0 +1,1195 @@
+:root {
+    --color-primario: #EAF6F8; /* Un blanco roto más suave */
+    --color-secundario: #008080; /* Un verde azulado más moderno */
+    --color-acento: #20B2AA;   /* Un turquesa vibrante */
+    --color-texto: #333333;   /* Gris oscuro para mejor legibilidad */
+    --color-claro: #F5FBFD;
+    --color-sombra: rgba(0, 0, 0, 0.1);
+    --fuente-principal: 'Poppins', sans-serif;
+    --fuente-titulos: 'Merriweather', serif;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: var(--fuente-principal);
+    background-color: var(--color-primario);
+    color: var(--color-texto);
+    line-height: 1.7;
+    -webkit-font-smoothing: antialiased;
+}
+
+/* Header */
+header {
+    position: fixed;
+    top: 0;
+    width: 100%;
+    background: rgba(255, 255, 255, 0.95);
+    padding: 1.5rem 5%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    box-shadow: 0 4px 20px var(--color-sombra);
+    z-index: 1000;
+}
+
+.logo {
+    font-size: 2rem;
+    font-weight: 700;
+    color: var(--color-secundario);
+    display: flex;
+    align-items: center;
+    gap: 0.7rem;
+}
+
+.logo i {
+    font-size: 2.2rem;
+}
+
+.nav-menu {
+    display: flex;
+    gap: 2.5rem;
+    align-items: center;
+}
+
+.nav-menu a {
+    text-decoration: none;
+    color: var(--color-texto);
+    transition: color 0.3s ease;
+    position: relative;
+}
+
+.nav-menu a::after {
+    content: '';
+    position: absolute;
+    bottom: -3px;
+    left: 0;
+    width: 0;
+    height: 2px;
+    background: var(--color-acento);
+    transition: width 0.3s ease-in-out;
+}
+
+.nav-menu a:hover,
+.nav-menu a:focus {
+    color: var(--color-acento);
+}
+
+.nav-menu a:hover::after,
+.nav-menu a:focus::after {
+    width: 100%;
+}
+
+.header-icons {
+    display: flex;
+    gap: 1.8rem;
+    align-items: center;
+}
+
+.icon-btn {
+    background: none;
+    border: none;
+    cursor: pointer;
+    color: var(--color-texto);
+    font-size: 1.3rem;
+    transition: color 0.3s ease;
+}
+
+.icon-btn:hover,
+.icon-btn:focus {
+    color: var(--color-acento);
+}
+
+.carrito-contador {
+   /* background: var(--color-acento);
+    color: white;
+    border-radius: 50%;
+    padding: 0.3rem 0.6rem;
+    font-size: 0.9rem;
+    position: absolute;
+    top: -8px;
+    right: -8px;*/
+    position: relative; /* Importante para el posicionamiento absoluto del contador */
+    display: inline-block; 
+}
+
+/* Sección Hero */
+.hero {
+    height: 90vh; /* Ajuste para no ocupar toda la pantalla inicialmente */
+    background: linear-gradient(to bottom, rgba(234, 246, 248, 0.7), rgba(234, 246, 248, 0.9)),
+                url('https://i.pinimg.com/originals/c9/92/95/c992952f8dfb6fcfd905ad5298bdd411.gif') center/cover no-repeat;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    padding: 2rem;
+    margin-top: 70px; /* Ajuste por la altura del header fijo */
+}
+
+.hero-content {
+    max-width: 900px;
+    animation: fadeInUp 1.2s ease-out;
+}
+
+.hero h1 {
+    font-size: 4rem;
+    margin-bottom: 1.8rem;
+    color: var(--color-secundario);
+    line-height: 1.1;
+    font-family: var(--fuente-titulos);
+    font-weight: 700;
+}
+
+.hero p {
+    font-size: 1.3rem;
+    margin-bottom: 2.5rem;
+    color: var(--color-texto);
+    opacity: 0.8;
+}
+
+.cta-button {
+    display: inline-block;
+    padding: 1rem 2rem;
+    background-color: var(--color-acento);
+    color: white;
+    text-decoration: none;
+    border-radius: 10px;
+    font-weight: 500;
+    transition: background-color 0.3s ease-in-out, transform 0.2s ease-in-out;
+    box-shadow: 0 4px 10px var(--color-sombra);
+}
+
+.cta-button:hover,
+.cta-button:focus {
+    background-color: var(--color-secundario);
+    transform: scale(1.05);
+}
+
+/* Sección de Beneficios */
+.beneficios-section {
+    padding: 6rem 5%;
+    background: var(--color-claro);
+    text-align: center;
+}
+
+.beneficios-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 3rem;
+    max-width: 1200px;
+    margin: 3rem auto 0;
+}
+
+.beneficio-card {
+    padding: 2.5rem;
+    background: white;
+    border-radius: 15px;
+    box-shadow: 0 4px 15px var(--color-sombra);
+    transition: transform 0.3s ease-in-out;
+}
+
+.beneficio-card:hover {
+    transform: translateY(-5px);
+}
+
+.beneficio-card i {
+    font-size: 2.5rem;
+    color: var(--color-acento);
+    margin-bottom: 1rem;
+}
+
+.beneficio-card h3 {
+    font-size: 1.8rem;
+    color: var(--color-secundario);
+    margin-bottom: 0.8rem;
+}
+
+.beneficio-card p {
+    color: var(--color-texto);
+    opacity: 0.7;
+}
+
+/* Productos Destacados */
+.productos-section {
+    padding: 6rem 5%;
+    background: var(--color-primario);
+}
+
+.section-title {
+    text-align: center;
+    font-size: 3rem;
+    margin-bottom: 4rem;
+    color: var(--color-secundario);
+    font-family: var(--fuente-titulos);
+    font-weight: 700;
+}
+
+.productos-carousel-container {
+    position: relative;
+    overflow: hidden; /* Oculta los productos que no están visibles */
+    margin: 0 auto;
+    max-width: 1200px; /* Ajusta el ancho máximo según tu diseño */
+    padding: 0 20px; /* Espacio para las flechas */
+}
+
+.carousel-slide {
+    overflow-x: auto;        
+    scroll-behavior: smooth; /* Para el desplazamiento suave con las flechas */
+}
+
+.productos-grid {
+    display: flex; /* Cambiamos a flex para el scroll horizontal */
+    flex-direction: row;
+    gap: 2.5rem;
+    /* max-width: none; Eliminamos el ancho máximo para que se extienda */
+    width: fit-content; /* El ancho se ajusta al contenido */
+}
+
+.producto-card {
+    background: white;
+    border-radius: 15px;
+    padding: 2rem;
+    text-align: center;
+    transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
+    box-shadow: 0 6px 20px var(--color-sombra);
+    position: relative;
+    width: 320px; /* Ancho fijo para cada tarjeta */
+    flex-shrink: 0; /* Evita que las tarjetas se encojan */
+}
+
+.producto-card:hover {
+    transform: translateY(-8px);
+    box-shadow: 0 8px 25px rgba(0,0,0,0.15);
+}
+
+.producto-imagen-contenedor {
+    width: 100%;
+    height: auto; /* Ajusta la altura automáticamente */
+    border-radius: 10px;
+    margin-bottom: 1.2rem;
+    overflow: hidden; /* Opcional: para que la imagen no se salga del contenedor */
+}
+
+.producto-imagen {
+    width: 100%;
+    display: block;
+    object-fit: cover; /* Ajusta según cómo quieras que se muestre la imagen */
+    border-radius: 10px;
+    max-height: 200px; /* O una altura máxima deseada para la imagen */
+}
+
+.producto-titulo {
+    font-size: 1.6rem;
+    color: var(--color-texto);
+    margin-bottom: 0.5rem;
+    font-weight: 500;
+}
+
+.producto-descripcion {
+    color: var(--color-texto);
+    opacity: 0.7;
+    margin-bottom: 1rem;
+    font-size: 0.95rem;
+}
+
+.producto-precio {
+    color: var(--color-acento);
+    font-size: 1.7rem;
+    font-weight: 600;
+    margin-bottom: 1.5rem;
+}
+
+.producto-cta {
+    display: inline-block;
+    padding: 0.8rem 1.5rem;
+    background-color: var(--color-acento);
+    color: white;
+    text-decoration: none;
+    border-radius: 8px;
+    font-weight: 500;
+    transition: background-color 0.3s ease-in-out;
+}
+
+.producto-cta:hover,
+.producto-cta:focus {
+    background-color: var(--color-secundario);
+}
+
+.carousel-arrow {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    background: none;
+    border: none;
+    font-size: 2rem;
+    color: var(--color-secundario);
+    cursor: pointer;
+    z-index: 10;
+    opacity: 0.7;
+    transition: opacity 0.3s ease;
+}
+
+.carousel-arrow:hover {
+    opacity: 1;
+}
+
+.prev-arrow {
+    left: 10px;
+}
+
+.next-arrow {
+    right: 10px;
+}
+
+/* Cómo Funciona */
+.como-funciona {
+    padding: 6rem 5%;
+    background: var(--color-claro);
+}
+
+.pasos-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 3.5rem;
+    max-width: 1200px;
+    margin: 3rem auto 0;
+    text-align: center;
+}
+
+.paso-card {
+    padding: 2.5rem;
+    background: white;
+    border-radius: 15px;
+    box-shadow: 0 4px 15px var(--color-sombra);
+    transition: transform 0.3s ease-in-out;
+}
+
+.paso-card:hover {
+    transform: translateY(-5px);
+}
+
+.paso-imagen {
+    width: 100%;
+    height: 200px;
+    object-fit: cover;
+    border-radius: 10px;
+    margin-bottom: 1.2rem;
+}
+
+.paso-numero {
+    font-size: 2.2rem;
+    width: 60px;
+    height: 60px;
+    background: var(--color-acento);
+    color: white;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 0 auto 1.5rem;
+    font-weight: 600;
+}
+
+.paso-titulo {
+    font-size: 1.8rem;
+    color: var(--color-secundario);
+    margin-bottom: 0.8rem;
+    font-weight: 500;
+}
+
+.paso-descripcion {
+    color: var(--color-texto);
+    opacity: 0.7;
+}
+
+/* Contacto */
+.contacto-section {
+    padding: 6rem 5%;
+    background: var(--color-primario);
+}
+
+.contacto-grid {
+    display: grid;
+    grid-template-columns: 1fr 1.2fr;
+    gap: 4rem;
+    max-width: 1200px;
+    margin: 3rem auto 0;
+    align-items: center;
+}
+
+.contacto-info h3 {
+    font-size: 2rem;
+    color: var(--color-secundario);
+    margin-bottom: 1.5rem;
+    font-weight: 600;
+}
+
+.contacto-info p {
+    color: var(--color-texto);
+    opacity: 0.7;
+    margin-bottom: 2rem;
+    font-size: 1.1rem;
+}
+
+.contacto-info ul {
+    list-style: none;
+    padding: 0;
+}
+
+.contacto-info li {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    margin-bottom: 1rem;
+    color: var(--color-texto);
+    opacity: 0.8;
+}
+
+.contacto-info i {
+    font-size: 1.5rem;
+    color: var(--color-acento);
+}
+
+.contacto-form {
+    background: white;
+    padding: 3rem;
+    border-radius: 15px;
+    box-shadow: 0 6px 20px var(--color-sombra);
+}
+
+.contacto-form h3 {
+    font-size: 2rem;
+    color: var(--color-secundario);
+    margin-bottom: 2rem;
+    text-align: center;
+    font-weight: 600;
+}
+
+.form-group {
+    margin-bottom: 2rem;
+}
+
+.form-group label {
+    display: block;
+    margin-bottom: 0.5rem;
+    color: var(--color-texto);
+    font-weight: 500;
+}
+
+input[type="text"],
+input[type="email"],
+textarea {
+    width: 100%;
+    padding: 1rem;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    font-family: inherit;
+    font-size: 1rem;
+    color: var(--color-texto);
+    box-sizing: border-box;
+}
+
+textarea {
+    resize: vertical;
+}
+
+.contacto-form .cta-button {
+    display: block;
+    width: 100%;
+    padding: 1.2rem;
+    font-size: 1.1rem;
+}
+
+/* Footer */
+footer {
+    background: var(--color-secundario);
+    color: white;
+    padding: 5rem 5%;
+    text-align: center;
+}
+
+.footer-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 3rem;
+    max-width: 1200px;
+    margin: 0 auto;
+    text-align: left;
+}
+
+.footer-col h4 {
+    margin-bottom: 1.8rem;
+    font-size: 1.4rem;
+    font-weight: 600;
+}
+
+.footer-col a {
+    color: white;
+    text-decoration: none;
+    display: block;
+    margin-bottom: 1rem;
+    transition: color 0.3s ease-in-out;
+}
+
+.footer-col a:hover,
+.footer-col a:focus {
+    color: var(--color-acento);
+}
+
+.social-icons {
+    display: flex;
+    gap: 1.5rem;
+    margin-top: 1.5rem;
+}
+
+.social-icons a {
+    font-size: 1.8rem;
+    color: white;
+    transition: color 0.3s ease-in-out;
+}
+
+.social-icons a:hover,
+.social-icons a:focus {
+    color: var(--color-acento);
+}
+
+.footer-bottom {
+    margin-top: 4rem;
+    padding-top: 2rem;
+    border-top: 1px solid rgba(255, 255, 255, 0.2);
+    font-size: 0.9rem;
+    opacity: 0.8;
+}
+
+.footer-bottom p {
+    margin-bottom: 0.5rem;
+}
+
+/* Responsive */
+@media (max-width: 980px) {
+    .nav-menu {
+        gap: 1.5rem;
+    }
+    .nav-menu a {
+        font-size: 1rem;
+    }
+    .header-icons {
+        gap: 1rem;
+    }
+    .icon-btn {
+        font-size: 1.1rem;
+    }
+    .hero h1 {
+        font-size: 3rem;
+    }
+    .hero p {
+        font-size: 1.1rem;
+    }
+    .beneficios-grid {
+        grid-template-columns:
+        repeat(auto-fit, minmax(250px, 1fr));
+    }
+    .productos-grid {
+        grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    }
+    .contacto-grid {
+        grid-template-columns: 1fr;
+    }
+    .contacto-info {
+        margin-bottom: 3rem;
+        text-align: center;
+    }
+}
+
+@media (max-width: 768px) {
+    .nav-menu {
+        display: none;
+        position: absolute;
+        top: 100%;
+        left: 0;
+        right: 0;
+        background: white;
+        padding: 1.5rem;
+        flex-direction: column;
+        box-shadow: 0 5px 15px var(--color-sombra);
+        text-align: center;
+    }
+
+    .nav-menu.active {
+        display: flex;
+    }
+
+    .menu-toggle {
+        display: block;
+        font-size: 1.8rem;
+        cursor: pointer;
+        color: var(--color-secundario);
+    }
+
+    .logo {
+        font-size: 2.2rem;
+    }
+
+    .hero h1 {
+        font-size: 2.5rem;
+    }
+    .hero p {
+        font-size: 1rem;
+    }
+    .section-title {
+        font-size: 2.5rem;
+    }
+    .pasos-grid {
+        grid-template-columns: 1fr;
+    }
+    .testimonios-grid {
+        grid-template-columns: 1fr;
+    }
+    .footer-grid {
+        grid-template-columns: 1fr;
+        text-align: center;
+    }
+}
+
+/* Animaciones */
+@keyframes fadeInUp {
+    from {
+        opacity: 0;
+        transform: translateY(30px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@keyframes waterDrop {
+    0% { transform: scale(0); opacity: 0; }
+    80% { transform: scale(1.1); }
+    100% { transform: scale(1); opacity: 1; }
+}
+
+.water-drop {
+    animation: waterDrop 0.6s ease-out;
+}
+
+.login-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    min-height: 100vh;
+    background-color: var(--color-primario);
+    padding: 2rem;
+}
+
+.login-header {
+    text-align: center;
+    margin-bottom: 2rem;
+}
+
+.login-header .logo {
+    font-size: 2.5rem;
+    font-weight: 700;
+    color: var(--color-secundario);
+    display: flex;
+    align-items: center;
+    gap: 0.7rem;
+    margin-bottom: 0.5rem;
+}
+
+.login-header .logo i {
+    font-size: 2.7rem;
+}
+
+.login-header h2 {
+    color: var(--color-texto);
+    font-weight: 500;
+    margin-top: 0.5rem;
+}
+
+.login-form {
+    background-color: white;
+    padding: 2.5rem;
+    border-radius: 15px;
+    box-shadow: 0 6px 20px var(--color-sombra);
+    width: 100%;
+    max-width: 400px;
+}
+
+.form-group {
+    margin-bottom: 1.8rem;
+    position: relative;
+}
+
+.form-group label {
+    display: block;
+    margin-bottom: 0.5rem;
+    color: var(--color-texto);
+    font-weight: 500;
+}
+
+.form-group label i {
+    margin-right: 0.5rem;
+    color: var(--color-acento);
+}
+
+.form-group input[type="email"],
+.form-group input[type="password"] {
+    width: calc(100% - 2rem);
+    padding: 1rem;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    font-family: inherit;
+    font-size: 1rem;
+    color: var(--color-texto);
+    box-sizing: border-box;
+}
+
+.form-options {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 1.5rem;
+    font-size: 0.9rem;
+    color: var(--color-texto);
+}
+
+.form-options label {
+    display: flex;
+    align-items: center;
+    cursor: pointer;
+}
+
+.form-options label input[type="checkbox"] {
+    margin-right: 0.5rem;
+}
+
+.form-options a {
+    color: var(--color-acento);
+    text-decoration: none;
+    transition: color 0.3s ease;
+}
+
+.form-options a:hover {
+    color: var(--color-secundario);
+}
+
+.login-button {
+    display: block;
+    width: 100%;
+    padding: 1rem 2rem;
+    background-color: var(--color-acento);
+    color: white;
+    text-decoration: none;
+    border-radius: 10px;
+    font-weight: 500;
+    transition: background-color 0.3s ease-in-out, transform 0.2s ease-in-out;
+    box-shadow: 0 4px 10px var(--color-sombra);
+    border: none;
+    cursor: pointer;
+    font-size: 1.1rem;
+}
+
+.login-button:hover,
+.login-button:focus {
+    background-color: var(--color-secundario);
+    transform: scale(1.02);
+}
+
+.login-footer {
+    margin-top: 2rem;
+    font-size: 0.9rem;
+    color: var(--color-texto);
+}
+
+.login-footer a {
+    color: var(--color-acento);
+    text-decoration: none;
+    transition: color 0.3s ease;
+}
+
+.login-footer a:hover {
+    color: var(--color-secundario);
+}
+
+.password-toggle {
+    position: absolute;
+    top: 50%;
+    right: 1rem;
+    transform: translateY(-50%);
+    cursor: pointer;
+    color: var(--color-texto);
+    opacity: 0.7;
+}
+
+.password-toggle:hover {
+    opacity: 1;
+}
+
+.register-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    min-height: 100vh;
+    background-color: var(--color-primario);
+    padding: 2rem;
+}
+
+.register-header {
+    text-align: center;
+    margin-bottom: 2rem;
+}
+
+.register-header .logo {
+    font-size: 2.5rem;
+    font-weight: 700;
+    color: var(--color-secundario);
+    display: flex;
+    align-items: center;
+    gap: 0.7rem;
+    margin-bottom: 0.5rem;
+}
+
+.register-header .logo i {
+    font-size: 2.7rem;
+}
+
+.register-header h2 {
+    color: var(--color-texto);
+    font-weight: 500;
+    margin-top: 0.5rem;
+}
+
+.register-form {
+    background-color: white;
+    padding: 2.5rem;
+    border-radius: 15px;
+    box-shadow: 0 6px 20px var(--color-sombra);
+    width: 100%;
+    max-width: 400px;
+}
+
+.form-group {
+    margin-bottom: 1.8rem;
+    position: relative;
+}
+
+.form-group label {
+    display: block;
+    margin-bottom: 0.5rem;
+    color: var(--color-texto);
+    font-weight: 500;
+}
+
+.form-group label i {
+    margin-right: 0.5rem;
+    color: var(--color-acento);
+}
+
+.form-group input[type="text"],
+.form-group input[type="email"],
+.form-group input[type="password"] {
+    width: calc(100% - 2rem);
+    padding: 1rem;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    font-family: inherit;
+    font-size: 1rem;
+    color: var(--color-texto);
+    box-sizing: border-box;
+}
+
+.form-options {
+    display: flex;
+    align-items: center;
+    margin-bottom: 1.5rem;
+    font-size: 0.9rem;
+    color: var(--color-texto);
+}
+
+.form-options label {
+    display: flex;
+    align-items: center;
+    cursor: pointer;
+}
+
+.form-options label input[type="checkbox"] {
+    margin-right: 0.5rem;
+}
+
+.form-options a {
+    color: var(--color-acento);
+    text-decoration: none;
+    transition: color 0.3s ease;
+}
+
+.form-options a:hover {
+    color: var(--color-secundario);
+}
+
+.register-button {
+    display: block;
+    width: 100%;
+    padding: 1rem 2rem;
+    background-color: var(--color-acento);
+    color: white;
+    text-decoration: none;
+    border-radius: 10px;
+    font-weight: 500;
+    transition: background-color 0.3s ease-in-out, transform 0.2s ease-in-out;
+    box-shadow: 0 4px 10px var(--color-sombra);
+    border: none;
+    cursor: pointer;
+    font-size: 1.1rem;
+}
+
+.register-button:hover,
+.register-button:focus {
+    background-color: var(--color-secundario);
+    transform: scale(1.02);
+}
+
+.register-footer {
+    margin-top: 2rem;
+    font-size: 0.9rem;
+    color: var(--color-texto);
+}
+
+.register-footer a {
+    color: var(--color-acento);
+    text-decoration: none;
+    transition: color 0.3s ease;
+}
+
+.register-footer a:hover {
+    color: var(--color-secundario);
+}
+
+.password-toggle {
+    position: absolute;
+    top: 50%;
+    right: 1rem;
+    transform: translateY(-50%);
+    cursor: pointer;
+    color: var(--color-texto);
+    opacity: 0.7;
+}
+
+.password-toggle:hover {
+    opacity: 1;
+}
+
+.confirm-toggle {
+    right: 1rem; /* Asegura que esté en la posición correcta para el segundo input */
+}
+
+.terms-container {
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+    background-color: var(--color-primario);
+    padding: 2rem;
+    color: var(--color-texto);
+}
+
+.terms-header {
+    text-align: center;
+    margin-bottom: 2rem;
+}
+
+.terms-header .logo {
+    font-size: 2.5rem;
+    font-weight: 700;
+    color: var(--color-secundario);
+    display: flex;
+    align-items: center;
+    gap: 0.7rem;
+    margin-bottom: 0.5rem;
+}
+
+.terms-header .logo i {
+    font-size: 2.7rem;
+}
+
+.terms-header h1 {
+    color: var(--color-secundario);
+    font-weight: 600;
+    margin-top: 0.5rem;
+}
+
+.terms-content {
+    background-color: white;
+    padding: 2rem;
+    border-radius: 10px;
+    box-shadow: 0 4px 15px var(--color-sombra);
+    margin-bottom: 2rem;
+    line-height: 1.6;
+}
+
+.terms-content h2 {
+    color: var(--color-secundario);
+    margin-top: 1.5rem;
+    margin-bottom: 0.8rem;
+    font-weight: 500;
+}
+
+.terms-content p {
+    margin-bottom: 1rem;
+    opacity: 0.8;
+}
+
+.terms-footer {
+    text-align: center;
+    margin-top: 1rem;
+    font-size: 0.9rem;
+    opacity: 0.7;
+}
+.forgot-password-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    min-height: 100vh;
+    background-color: var(--color-primario);
+    padding: 2rem;
+}
+
+.forgot-password-header {
+    text-align: center;
+    margin-bottom: 2rem;
+}
+
+.forgot-password-header .logo {
+    font-size: 2.5rem;
+    font-weight: 700;
+    color: var(--color-secundario);
+    display: flex;
+    align-items: center;
+    gap: 0.7rem;
+    margin-bottom: 0.5rem;
+}
+
+.forgot-password-header .logo i {
+    font-size: 2.7rem;
+}
+
+.forgot-password-header h2 {
+    color: var(--color-texto);
+    font-weight: 500;
+    margin-top: 0.5rem;
+}
+
+.forgot-password-header p {
+    color: var(--color-texto);
+    opacity: 0.8;
+    margin-top: 0.8rem;
+    margin-bottom: 1.5rem;
+    font-size: 0.95rem;
+}
+
+.forgot-password-form {
+    background-color: white;
+    padding: 2.5rem;
+    border-radius: 15px;
+    box-shadow: 0 6px 20px var(--color-sombra);
+    width: 100%;
+    max-width: 400px;
+}
+
+.form-group {
+    margin-bottom: 1.8rem;
+    position: relative;
+}
+
+.form-group label {
+    display: block;
+    margin-bottom: 0.5rem;
+    color: var(--color-texto);
+    font-weight: 500;
+}
+
+.form-group label i {
+    margin-right: 0.5rem;
+    color: var(--color-acento);
+}
+
+.form-group input[type="email"] {
+    width: calc(100% - 2rem);
+    padding: 1rem;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    font-family: inherit;
+    font-size: 1rem;
+    color: var(--color-texto);
+    box-sizing: border-box;
+}
+
+.reset-password-button {
+    display: block;
+    width: 100%;
+    padding: 1rem 2rem;
+    background-color: var(--color-acento);
+    color: white;
+    text-decoration: none;
+    border-radius: 10px;
+    font-weight: 500;
+    transition: background-color 0.3s ease-in-out, transform 0.2s ease-in-out;
+    box-shadow: 0 4px 10px var(--color-sombra);
+    border: none;
+    cursor: pointer;
+    font-size: 1.1rem;
+    margin-top: 1.5rem;
+}
+
+.reset-password-button:hover,
+.reset-password-button:focus {
+    background-color: var(--color-secundario);
+    transform: scale(1.02);
+}
+
+.forgot-password-footer {
+    margin-top: 2rem;
+    font-size: 0.9rem;
+    color: var(--color-texto);
+}
+
+.forgot-password-footer a {
+    color: var(--color-acento);
+    text-decoration: none;
+    transition: color 0.3s ease;
+}
+
+.forgot-password-footer a:hover {
+    color: var(--color-secundario);
+}
+.back-home-btn {
+    font-size: 1.2rem; /* Ajusta el tamaño específico para este botón */
+    padding: 0.3rem; /* Ajusta el padding específico */    
+}
+
+.icon-btn {
+    display: inline-flex; /* Para centrar el icono */
+    justify-content: center;
+    align-items: center;
+    background: none; /* O el color de fondo deseado */
+    color: var(--color-secundario); /* O el color del icono */
+    border: none;
+    font-size: 1.5rem; /* Ajusta el tamaño del icono */
+    cursor: pointer;
+    opacity: 0.8;
+    transition: opacity 0.3s ease;
+    padding: 0.5rem; /* Añade un poco de espacio alrededor del icono */
+    border-radius: 50%; /* Para hacerlo circular si lo deseas */
+    text-decoration: none; /* Esta línea quita el subrayado */
+}
+
+.icon-btn:hover {
+    opacity: 1;
+}
+
